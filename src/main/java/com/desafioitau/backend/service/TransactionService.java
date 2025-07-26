@@ -4,11 +4,11 @@ import com.desafioitau.backend.model.TransactionRequestDTO;
 
 import org.springframework.stereotype.Service;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 @Service
-
 public class TransactionService {
 
     private List<TransactionRequestDTO> transactions = new CopyOnWriteArrayList<>();
@@ -19,5 +19,11 @@ public class TransactionService {
 
     public void deleteAll(){
         transactions.clear();
+    }
+
+    public List<TransactionRequestDTO> searchTransactions(Integer interval){
+        OffsetDateTime offsetDateTime = OffsetDateTime.now().minusSeconds(interval);
+
+        return transactions.stream().filter(transactions -> transactions.dataHora().isAfter(offsetDateTime)).toList();
     }
 }
