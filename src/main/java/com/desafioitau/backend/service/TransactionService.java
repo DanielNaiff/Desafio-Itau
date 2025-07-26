@@ -16,4 +16,8 @@ public class TransactionService {
     public void addTransaction(TransactionRequestDTO request){
         transactions.add(request);
     }
+
+    public void deleteAll(){
+        transactions.clear();
+    }
 }
