@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: backend
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,metrics,swagger-ui"
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+    app:
+      name: API de Transações
+      description: API REST para controle e estatísticas de transações
+      version: 1.0.0
+  metrics:
+    enable:
+      all: true
+
+springdoc:
+  show-actuator: true
