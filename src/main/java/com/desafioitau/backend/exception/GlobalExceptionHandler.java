@@ -18,4 +18,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Void> handleInvalidJson(org.springframework.http.converter.HttpMessageNotReadableException ex) {
         return ResponseEntity.badRequest().build();
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Void> handleGenericException(Exception ex) {
+        return ResponseEntity.internalServerError().build();
+    }
 }
