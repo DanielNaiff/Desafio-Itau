@@ -18,8 +18,8 @@ management:
     env:
       enabled: true
     app:
-      name: API de Transações
-      description: API REST para controle e estatísticas de transações
+      name: API de Transacoes
+      description: API REST para controle e estatisticas de transacoes
       version: 1.0.0
   metrics:
     enable:

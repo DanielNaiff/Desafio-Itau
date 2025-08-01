@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -13,7 +14,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @Slf4j
 public class TransactionService {
 
-    private List<TransactionRequestDTO> transactions = new CopyOnWriteArrayList<>();
+    private List<TransactionRequestDTO> transactions = new ArrayList<>();
 
     public void addTransaction(TransactionRequestDTO request){
         transactions.add(request);
